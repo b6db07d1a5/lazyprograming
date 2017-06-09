@@ -27,14 +27,12 @@ client.on('message', message => {
 
 		}
 
-		if (message.content.match(/สัส.*/)) {
-			let item = sud[Math.floor(Math.random()*sud.length)];
+		if (message.content.includes('บอท')) {
+			let item = botrep[Math.floor(Math.random()*botrep.length)];
 			message.reply(item);
 		}
 
-		if (message.content.match(/บอท.*/)) {
-			message.reply('เรียกทำไม ?');
-		}
+
 	}
 	
 	//if(!message.author.bot) {
@@ -70,6 +68,8 @@ let greet = ['ครับ', 'คับ', 'ค่ะ', 'คะ', 'สวัส',
 let hello = ['ดีจ้าา', 'เฮลโลวว :))', 'ว่าไง', 'อือดี'];
 
 let sud = ['ไรมืง', 'ปากหมาว่ะ','พูดงี้แดกตีนไหม ?' ,'อย่าด่ากันเลย', 'พูดไม่เพราะเลอออ'];
+
+let botrep = ['เรียกเพื่อ?', 'อะไรอีก', 'หุบปาก', 'พูดเยอะ ลำไย' ];
 
 client.login('MzIyNjM3MDY3MjQ1MDYwMTE4.DBvgag.5xmSkuxVB_kH2BQgIfw5p0MEJ0c');
 
