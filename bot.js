@@ -50,6 +50,21 @@ client.on('message', message => {
 	//}
 });
 
+
+client.on('guildMemberAdd', member => {
+
+  member.guild.defaultChannel.send(`เรียน  ผู้บริการ Rotate Plus คณาจารย์ และแขกผู้มีเกียรติ  ที่เคารพอย่างสูง  สวัสดี พี่ ๆ และเพื่อนทุกคน ดิฉัน ${member} ได้รับมอบหมายจากคณะกรรมการ Rotate Plus ให้ทำหน้าที่เล่นเกม ร่วมใจสัมพันธ์ ในสมาคมนี้ `);
+
+  const channel = member.guild.channels.find('name', 'member-log');
+
+  if (!channel) return;
+  
+  channel.send(`เรียน  ผู้บริการ Rotate Plus คณาจารย์ และแขกผู้มีเกียรติ  ที่เคารพอย่างสูง  สวัสดี พี่ ๆ และเพื่อนทุกคน ดิฉัน ${member} ได้รับมอบหมายจากคณะกรรมการ Rotate Plus ให้ทำหน้าที่เล่นเกม ร่วมใจสัมพันธ์ ในสมาคมนี้ `);
+  
+});
+
+
+
 let greet = ['ครับ', 'คับ', 'ค่ะ', 'คะ', 'สวัส', 'หวัด'];
 
 let hello = ['ดีจ้าา', 'เฮลโลวว :))', 'ว่าไง', 'อือดี'];
