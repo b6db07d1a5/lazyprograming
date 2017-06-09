@@ -1,0 +1,17 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "lazyProgramingBot",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^11.1.0",
+    "jquery": "^3.2.1",
+    "simsimi": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "author": "RotatePlus",
+  "license": "ISC"
+}
