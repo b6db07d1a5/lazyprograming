@@ -20,12 +20,11 @@ client.on('message', message => {
 			
 			let dee = msg.replace('ดี','');
 			
-			var foundPresent = (greet.indexOf(dee) > -1);
+			let foundPresent = (greet.indexOf(dee) > -1);
 			
 			if(foundPresent) {
 				message.reply(item);
 			}
-
 		}
 
 		if (msg.includes('บอท')) {
