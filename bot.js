@@ -12,12 +12,13 @@ var simsimi = new Simsimi({
 
 client.on('message', message => {
 	
+	let msg = message.content;
 	if(!message.author.bot) {
-		if (message.content.includes('ดี')) {
+		if (msg.includes('ดี')) {
 
 			let item = hello[Math.floor(Math.random()*hello.length)];
 			
-			let dee = message.content.replace('ดี','');
+			let dee = msg.replace('ดี','');
 			
 			var foundPresent = (greet.indexOf(dee) > -1);
 			
@@ -27,11 +28,15 @@ client.on('message', message => {
 
 		}
 
-		if (message.content.includes('บอท')) {
+		if (msg.includes('บอท')) {
 			let item = botrep[Math.floor(Math.random()*botrep.length)];
 			message.reply(item);
 		}
-
+		
+		if (msg.includes('สัส') ) {
+			let item = sud[Math.floor(Math.random()*sud.length)];
+			message.reply(item);
+		}
 
 	}
 	
