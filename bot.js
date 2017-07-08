@@ -32,9 +32,20 @@ client.on('message', message => {
 			message.reply(item);
 		}
 		
-		if (msg.includes('สัส') ) {
+		if (msg.includes('สัส') || msg.includes('ควย')) {
 			let item = sud[Math.floor(Math.random()*sud.length)];
 			message.reply(item);
+		}
+		if (msg.includes('อ่าว')) {
+			let item = confu[Math.floor(Math.random()*confu.length)];
+			message.reply(item);
+		}
+		
+		if (msg.includes('บวก')) {
+			
+			if (msg.includes('ดาบ') || msg.includes('อาวุธ')){
+				message.reply('อันนี้ป่าว ' + 'https://sites.google.com/site/rotateplusgaming/bladeandsoul/home/weapon');
+			}
 		}
 
 	}
@@ -74,6 +85,8 @@ let hello = ['ดีจ้าา', 'เฮลโลวว :))', 'ว่าไง
 let sud = ['ไรมืง', 'ปากหมาว่ะ','พูดงี้แดกตีนไหม ?' ,'อย่าด่ากันเลย', 'พูดไม่เพราะเลอออ'];
 
 let botrep = ['เรียกเพื่อ?', 'อะไรอีก', 'หุบปาก', 'พูดเยอะ ลำไย' ];
+
+let confu = ['งงไร', 'มีปัญหา ?', 'เห้ย !!ไม่เหมือนที่คุยกันไว้นี่น่า']
 
 client.login('MzIyNjM3MDY3MjQ1MDYwMTE4.DBvgag.5xmSkuxVB_kH2BQgIfw5p0MEJ0c');
 
