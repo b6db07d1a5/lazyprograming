@@ -1,0 +1,51 @@
+import React, { Component } from 'react';
+
+import { createStore, combineReducers as combineStateUpdater } from 'redux'
+import { Provider, connect } from 'react-redux'
+
+function stateUpdater(state = 999, action) {
+  switch(action.type){
+    case 'INCREASE':
+      return state + 1
+    case 'DECREASE':
+      return state - 1
+    default:
+      return state
+  }
+}
+
+const rootStateUpdater = combineStateUpdater({
+  count: stateUpdater
+})
+
+const store = createStore(rootStateUpdater)
+
+class Counter extends Component {
+  increase = () => {this.props.dispatch({type:'INCREASE'})}
+  decrease = () => {this.props.dispatch({type:'DECREASE'})}
+
+  render() {
+    return (
+      <div>
+        {this.props.count}
+        <button onClick={this.increase}>+++</button>
+        <button onClick={this.decrease}>---</button>
+      </div>
+    );
+  }
+}
+
+function stateSelector(state){
+  return {
+    count: state.count
+  }
+}
+const CounterContainer = connect(stateSelector)(Counter)
+
+export default () => {
+  return (
+    <Provider store={store}>
+      <CounterContainer />
+    </Provider>
+  )
+}
